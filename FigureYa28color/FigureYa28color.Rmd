@@ -64,7 +64,6 @@ If you need a lot of colors, then pick a colorful paper.
 Use the `rPlotter` package recommended by Uncle Y <https://mp.weixin.qq.com/s/ZrS8IQOMSwx9R3006HYryA>, install it first
 
 ```{r}
-source("install_dependencies.R")
 source("extract_colours.R") 
 library(rPlotter)
 library(reshape2)
