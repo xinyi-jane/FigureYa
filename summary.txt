@@ -316,29 +316,7 @@ RMD Render Summary
 [SKIPPED] - ./FigureYa284pairwiseLogrank/FigureYa284pairwiseLogrank.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa10chromosomeV2_update/FigureYa10chromosomeV2_update.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa27tSNE_update/FIgureYa27tSNE_update.Rmd (Not listed in auto_Knit_online.txt)
-[FAILED] - ./FigureYa212drugTargetV2/FigureYa212drugTargetV2.Rmd
---- Error Log for ./FigureYa212drugTargetV2/FigureYa212drugTargetV2.Rmd ---
-In file included from ReadInData.h:1,
-                 from ReadInData.c:1:
-depends.h:14:10: fatal error: gsl/gsl_blas.h: No such file or directory
-   14 | #include <gsl/gsl_blas.h>
-      |          ^~~~~~~~~~~~~~~~
-compilation terminated.
-make: *** [/opt/R/4.5.1/lib/R/etc/Makeconf:202: ReadInData.o] Error 1
-ERROR: compilation failed for package ‘ridge’
-* removing ‘/home/runner/work/_temp/Library/ridge’
-
-The downloaded source packages are in
-	'/tmp/RtmpBEFXzp/downloaded_packages'
-Error in `library()`:
-! there is no package called 'ridge'
-Backtrace:
-    ▆
- 1. └─base::library(ridge)
-
-Quitting from FigureYa212drugTargetV2.Rmd:76-93 [unnamed-chunk-1]
-Execution halted
------------------------------------
+[SKIPPED] - ./FigureYa212drugTargetV2/FigureYa212drugTargetV2.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa112venn/FigureYa112venn.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa201ClusterCorrelation/FigureYa201ClusterCorrelation.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa119Multiclasslimma/FigureYa119Multiclasslimma.Rmd (Not listed in auto_Knit_online.txt)
