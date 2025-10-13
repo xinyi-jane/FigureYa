@@ -1412,49 +1412,6 @@ cat("- train_data.txt: 训练数据 (", nrow(train_data), "样本)\n")
 cat("- test_data1.txt: 测试数据1 (", nrow(test_data1), "样本)\n") 
 cat("- test_data2.txt: 测试数据2 (", nrow(test_data2), "样本)\n")
 
-# 生成数据说明文件
-data_description <- c(
-  "=== 分类数据集说明 ===",
-  "",
-  "数据特点:",
-  paste("- 训练集样本数:", nrow(train_data)),
-  paste("- 测试集1样本数:", nrow(test_data1)),
-  paste("- 测试集2样本数:", nrow(test_data2)),
-  paste("- 特征总数:", ncol(train_data)-2),
-  "- 重要特征数: 20个 (前10个正相关，后10个负相关)",
-  "- 噪声特征数: 80个",
-  "",
-  "数据格式:",
-  "- 第1列: 样本名称",
-  "- 第2列: 分类标签 (0/1)",
-  "- 第3列及以后: 特征变量",
-  "",
-  "特征类型:",
-  "- CD1-CD20: 免疫标志物基因",
-  "- IL1-IL15: 细胞因子基因", 
-  "- TNFA, TNFB, TNFR1, TNFR2: TNF相关基因",
-  "- TF1-TF10: 转录因子",
-  "- MAPK1-MAPK8: MAPK通路基因",
-  "- PI3K1-PI3K5: PI3K通路基因",
-  "- WNT1-WNT7: WNT通路基因",
-  "- BCL1-BCL6: 凋亡相关基因",
-  "- CASP1-CASP8: 胱天蛋白酶",
-  "- METAB1-METAB10: 代谢相关基因",
-  "- 其他: 额外基因特征",
-  "",
-  "模拟的生物学背景:",
-  "该数据集模拟了疾病/治疗响应的分类问题，其中:",
-  "- 免疫相关基因(CD, IL系列)与响应状态相关",
-  "- 信号通路基因调节细胞响应",
-  "- 凋亡基因影响治疗敏感性",
-  "- 存在特征间的生物学相关性",
-  "- 包含噪声特征模拟现实复杂性"
-)
-
-writeLines(data_description, "data_description.txt")
-
-cat("\n数据说明文件已保存: data_description.txt\n")
-
 # 快速数据可视化
 library(ggplot2)
 library(corrplot)
