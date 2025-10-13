@@ -1,0 +1,443 @@
+---
+title: "FigureYa293Plus_BinaryClassificationML"
+params:
+  author: "Zread AI Assistant"  
+  reviewer: "Ying Ge"
+output: html_document
+---
+
+**Author(s)**: `r params$author`  
+**Reviewer(s)**: `r params$reviewer`  
+**Date**: `r Sys.Date()` 
+
+# Academic Citation
+If you use this code in your work or research, we kindly request that you cite our publication:
+
+Xiaofan Lu, et al. (2025). FigureYa: A Standardized Visualization Framework for Enhancing Biomedical Data Interpretation and Research Efficiency. iMetaMed. https://doi.org/10.1002/imm3.70005
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 需求描述
+# Demand description
+
+基于机器学习的二分类预测模型构建，比较不同算法组合的分类性能。
+
+Binary classification prediction model construction based on machine learning, comparing the classification performance of different algorithm combinations.
+
+# 应用场景
+# Application scenarios
+
+适用于二分类问题：
+- 治疗响应预测（响应 vs 非响应）
+- 疾病诊断（阳性 vs 阴性）
+- 预后分组（好 vs 差）
+- 药物敏感性（敏感 vs 耐药）
+
+Suitable for binary classification problems:
+- Treatment response prediction (responder vs non-responder)
+- Disease diagnosis (positive vs negative)
+- Prognosis grouping (good vs poor)
+- Drug sensitivity (sensitive vs resistant)
+
+# 环境设置
+# Environment Setup
+
+```{r}
+source("install_dependencies.R")
+
+# 分类算法相关包
+library(randomForest)
+library(glmnet)
+library(e1071)  # SVM
+library(xgboost)
+library(gbm)
+library(nnet)  # neural network
+library(MASS)  # LDA
+library(class) # KNN
+library(naivebayes)
+library(kernlab) # kernelized SVM
+
+# 评估和可视化
+library(caret)
+library(pROC)
+library(dplyr)
+library(tibble)
+library(ggplot2)
+library(ggsci)
+library(tidyr)
+library(ComplexHeatmap)
+library(circlize)
+library(RColorBrewer)
+
+# 显示英文报错信息
+Sys.setenv(LANGUAGE = "en") 
+# 禁止chr转成factor
+options(stringsAsFactors = FALSE) 
+```
+
+# 输入文件
+# Input Files
+
+数据格式：行为样本，第一列为样本名，第二列为分类标签（0/1），后面的列为特征基因。
+
+Data format: Rows are samples, first column is sample names, second column is classification labels (0/1), remaining columns are feature genes.
+
+```{r}
+# 加载数据集
+# Load datasets
+train_data <- read.table("train_data.txt", header = T, sep = "\t", quote = "", check.names = F)
+test_data1 <- read.table("test_data1.txt", header = T, sep = "\t", quote = "", check.names = F)
+test_data2 <- read.table("test_data2.txt", header = T, sep = "\t", quote = "", check.names = F)
+
+# 生成包含三个数据集的列表
+mm <- list(train = train_data,
+           test1 = test_data1, 
+           test2 = test_data2)
+
+# 数据标准化
+mm <- lapply(mm, function(x){
+  x[,-c(1:2)] <- scale(x[,-c(1:2)])
+  return(x)
+})
+
+# 检查数据
+head(mm$train[,1:5])
+table(mm$train[,2])  # 查看分类标签分布
+```
+
+# 10种分类算法定义
+# 10 Classification Algorithms Definition
+
+```{r}
+# 算法实现函数
+classification_algorithms <- list(
+  
+  # 1. Random Forest
+  "RF" = function(train_data, test_data) {
+    set.seed(123)
+    model <- randomForest(as.factor(label) ~ ., 
+                         data = train_data[,-1], 
+                         ntree = 500, 
+                         importance = TRUE)
+    pred_prob <- predict(model, test_data[,-c(1:2)], type = "prob")[,2]
+    return(pred_prob)
+  },
+  
+  # 2. Support Vector Machine
+  "SVM" = function(train_data, test_data) {
+    set.seed(123)
+    model <- svm(as.factor(label) ~ ., 
+                data = train_data[,-1], 
+                probability = TRUE, 
+                kernel = "radial")
+    pred_prob <- attr(predict(model, test_data[,-c(1:2)], probability = TRUE), "probabilities")[,2]
+    return(pred_prob)
+  },
+  
+  # 3. Logistic Regression
+  "LR" = function(train_data, test_data) {
+    model <- glm(label ~ ., 
+                data = train_data[,-1], 
+                family = "binomial")
+    pred_prob <- predict(model, test_data[,-c(1:2)], type = "response")
+    return(pred_prob)
+  },
+  
+  # 4. Lasso Regression
+  "Lasso" = function(train_data, test_data) {
+    set.seed(123)
+    x_train <- as.matrix(train_data[,-c(1:2)])
+    y_train <- train_data[,2]
+    model <- cv.glmnet(x_train, y_train, family = "binomial", alpha = 1, nfolds = 10)
+    pred_prob <- predict(model, as.matrix(test_data[,-c(1:2)]), 
+                        s = "lambda.min", type = "response")[,1]
+    return(pred_prob)
+  },
+  
+  # 5. Ridge Regression
+  "Ridge" = function(train_data, test_data) {
+    set.seed(123)
+    x_train <- as.matrix(train_data[,-c(1:2)])
+    y_train <- train_data[,2]
+    model <- cv.glmnet(x_train, y_train, family = "binomial", alpha = 0, nfolds = 10)
+    pred_prob <- predict(model, as.matrix(test_data[,-c(1:2)]), 
+                        s = "lambda.min", type = "response")[,1]
+    return(pred_prob)
+  },
+  
+  # 6. Elastic Net
+  "Enet" = function(train_data, test_data) {
+    set.seed(123)
+    x_train <- as.matrix(train_data[,-c(1:2)])
+    y_train <- train_data[,2]
+    model <- cv.glmnet(x_train, y_train, family = "binomial", alpha = 0.5, nfolds = 10)
+    pred_prob <- predict(model, as.matrix(test_data[,-c(1:2)]), 
+                        s = "lambda.min", type = "response")[,1]
+    return(pred_prob)
+  },
+  
+  # 7. XGBoost
+  "XGBoost" = function(train_data, test_data) {
+    set.seed(123)
+    dtrain <- xgb.DMatrix(data = as.matrix(train_data[,-c(1:2)]), 
+                         label = train_data[,2])
+    dtest <- xgb.DMatrix(data = as.matrix(test_data[,-c(1:2)]))
+    
+    model <- xgboost(data = dtrain, 
+                    nrounds = 100, 
+                    objective = "binary:logistic", 
+                    verbose = 0)
+    pred_prob <- predict(model, dtest)
+    return(pred_prob)
+  },
+  
+  # 8. Gradient Boosting Machine
+  "GBM" = function(train_data, test_data) {
+    set.seed(123)
+    model <- gbm(label ~ ., 
+                data = train_data[,-1], 
+                distribution = "bernoulli",
+                n.trees = 500, 
+                interaction.depth = 3,
+                shrinkage = 0.01,
+                cv.folds = 5)
+    best_iter <- gbm.perf(model, method = "cv", plot.it = FALSE)
+    pred_prob <- predict(model, test_data[,-c(1:2)], 
+                        n.trees = best_iter, type = "response")
+    return(pred_prob)
+  },
+  
+  # 9. Neural Network
+  "NN" = function(train_data, test_data) {
+    set.seed(123)
+    model <- nnet(as.factor(label) ~ ., 
+                 data = train_data[,-1], 
+                 size = 5, 
+                 trace = FALSE)
+    pred_prob <- predict(model, test_data[,-c(1:2)], type = "raw")[,1]
+    return(pred_prob)
+  },
+  
+  # 10. Naive Bayes
+  "NB" = function(train_data, test_data) {
+    model <- naivebayes(as.factor(label) ~ ., 
+                       data = train_data[,-1])
+    pred_prob <- predict(model, test_data[,-c(1:2)], type = "prob")[,2]
+    return(pred_prob)
+  }
+)
+```
+
+# 算法组合实现
+# Algorithm Combinations Implementation
+
+```{r}
+# 准备数据
+est_data <- mm$train
+colnames(est_data)[2] <- "label"  # 统一标签列名
+val_data_list <- mm[-1]
+val_data_list <- lapply(val_data_list, function(x) {
+  colnames(x)[2] <- "label"
+  return(x)
+})
+
+# 存储结果
+result <- data.frame()
+
+# 算法名称
+algo_names <- names(classification_algorithms)
+
+# 单一算法评估
+for(algo in algo_names) {
+  cat("Running algorithm:", algo, "\n")
+  
+  tryCatch({
+    # 获取预测概率
+    pred_probs <- lapply(val_data_list, function(test_data) {
+      classification_algorithms[[algo]](est_data, test_data)
+    })
+    
+    # 计算AUC
+    aucs <- sapply(1:length(pred_probs), function(i) {
+      roc_obj <- roc(val_data_list[[i]]$label, pred_probs[[i]], quiet = TRUE)
+      return(as.numeric(auc(roc_obj)))
+    })
+    
+    # 存储结果
+    cc <- data.frame(AUC = aucs) %>%
+      rownames_to_column('Dataset')
+    cc$Model <- algo
+    result <- rbind(result, cc)
+    
+  }, error = function(e) {
+    cat("Error in", algo, ":", e$message, "\n")
+  })
+}
+
+# 算法组合（投票法）
+combinations <- combn(algo_names, 2, simplify = FALSE)
+
+for(i in 1:min(length(combinations), 50)) {  # 限制组合数量
+  combo <- combinations[[i]]
+  combo_name <- paste(combo, collapse = " + ")
+  cat("Running combination:", combo_name, "\n")
+  
+  tryCatch({
+    # 组合预测
+    pred_probs <- lapply(val_data_list, function(test_data) {
+      prob1 <- classification_algorithms[[combo[1]]](est_data, test_data)
+      prob2 <- classification_algorithms[[combo[2]]](est_data, test_data)
+      return((prob1 + prob2) / 2)  # 平均投票
+    })
+    
+    # 计算AUC
+    aucs <- sapply(1:length(pred_probs), function(i) {
+      roc_obj <- roc(val_data_list[[i]]$label, pred_probs[[i]], quiet = TRUE)
+      return(as.numeric(auc(roc_obj)))
+    })
+    
+    # 存储结果
+    cc <- data.frame(AUC = aucs) %>%
+      rownames_to_column('Dataset')
+    cc$Model <- combo_name
+    result <- rbind(result, cc)
+    
+  }, error = function(e) {
+    cat("Error in", combo_name, ":", e$message, "\n")
+  })
+}
+
+# 查看结果
+head(result)
+```
+
+# 结果可视化
+# Results Visualization
+
+```{r fig.width=12, fig.height=8}
+# 计算平均AUC
+result_summary <- result %>%
+  group_by(Model) %>%
+  summarise(Mean_AUC = mean(AUC), .groups = 'drop') %>%
+  arrange(desc(Mean_AUC))
+
+# Top 15 模型
+top_models <- head(result_summary, 15)
+
+# 柱状图
+p1 <- ggplot(top_models, aes(x = reorder(Model, Mean_AUC), y = Mean_AUC)) +
+  geom_col(fill = "#4575B4", alpha = 0.8) +
+  geom_text(aes(label = round(Mean_AUC, 3)), hjust = -0.1, size = 3) +
+  coord_flip() +
+  labs(title = "Top 15 Classification Models Performance",
+       x = "Model", y = "Mean AUC") +
+  theme_minimal() +
+  theme(plot.title = element_text(hjust = 0.5, size = 14, face = "bold"))
+
+print(p1)
+
+# 热图展示
+result_wide <- result %>%
+  pivot_wider(names_from = Dataset, values_from = AUC) %>%
+  column_to_rownames('Model')
+
+# 选择Top 15模型制作热图
+top_models_data <- result_wide[top_models$Model, ]
+
+# 绘制热图
+library(ComplexHeatmap)
+col_fun <- colorRamp2(c(0.5, 0.7, 0.9), c("#2166AC", "white", "#B2182B"))
+
+ht <- Heatmap(as.matrix(top_models_data),
+              name = "AUC",
+              col = col_fun,
+              rect_gp = gpar(col = "white", lwd = 2),
+              show_row_names = TRUE,
+              show_column_names = TRUE,
+              row_names_side = "left",
+              column_title = "Classification Performance Across Datasets",
+              row_title = "Models",
+              heatmap_legend_param = list(title = "AUC"))
+
+draw(ht)
+```
+
+# 最优模型详细分析
+# Best Model Detailed Analysis
+
+```{r fig.width=10, fig.height=6}
+# 选择最优模型
+best_model <- top_models$Model[1]
+cat("Best model:", best_model, "\n")
+
+# 最优模型在各数据集上的性能
+best_results <- result %>% filter(Model == best_model)
+print(best_results)
+
+# ROC曲线
+if(grepl("\\+", best_model)) {
+  # 组合模型
+  algos <- trimws(strsplit(best_model, "\\+")[[1]])
+  
+  roc_list <- lapply(1:length(val_data_list), function(i) {
+    test_data <- val_data_list[[i]]
+    prob1 <- classification_algorithms[[algos[1]]](est_data, test_data)
+    prob2 <- classification_algorithms[[algos[2]]](est_data, test_data)
+    combined_prob <- (prob1 + prob2) / 2
+    
+    roc_obj <- roc(test_data$label, combined_prob, quiet = TRUE)
+    return(roc_obj)
+  })
+} else {
+  # 单一模型
+  roc_list <- lapply(1:length(val_data_list), function(i) {
+    test_data <- val_data_list[[i]]
+    pred_prob <- classification_algorithms[[best_model]](est_data, test_data)
+    roc_obj <- roc(test_data$label, pred_prob, quiet = TRUE)
+    return(roc_obj)
+  })
+}
+
+# 绘制ROC曲线
+colors <- c("#E31A1C", "#1F78B4", "#33A02C")
+plot(roc_list[[1]], col = colors[1], lwd = 2, main = paste("ROC Curves -", best_model))
+for(i in 2:length(roc_list)) {
+  plot(roc_list[[i]], col = colors[i], lwd = 2, add = TRUE)
+}
+
+legend("bottomright", 
+       legend = paste0(names(val_data_list), " (AUC: ", 
+                      round(sapply(roc_list, auc), 3), ")"),
+       col = colors[1:length(roc_list)], 
+       lwd = 2)
+```
+
+# 保存结果
+# Save Results
+
+```{r}
+# 保存完整结果
+write.csv(result, "classification_results.csv", row.names = FALSE)
+write.csv(result_summary, "classification_summary.csv", row.names = FALSE)
+
+# 保存最优模型信息
+best_model_info <- list(
+  best_model = best_model,
+  performance = best_results,
+  algorithm_used = if(grepl("\\+", best_model)) strsplit(best_model, "\\+")[[1]] else best_model
+)
+
+saveRDS(best_model_info, "best_classification_model.rds")
+
+cat("Results saved successfully!\n")
+cat("Best model:", best_model, "\n")
+cat("Mean AUC:", round(top_models$Mean_AUC[1], 3), "\n")
+```
+
+# Session Info
+
+```{r}
+sessionInfo()
+```
