@@ -50,3 +50,10 @@ Please complete the following information:
 ## 📋 错误信息 | Error Messages
 请复制粘贴完整的错误信息：
 Please copy and paste the complete error message:
+```
+
+```
+
+## 📎 附加信息 | Additional Context
+任何其他有助于解决问题的信息
+Any other information that might help solve the problem
