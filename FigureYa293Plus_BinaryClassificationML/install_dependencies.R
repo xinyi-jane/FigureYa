@@ -78,7 +78,7 @@ cat("Starting package installation...\n")
 
 # 先安装基础依赖
 cat("\nInstalling basic dependencies...\n")
-base_deps <- c("remotes", "devtools", "survival", "glmnet")
+base_deps <- c("remotes", "devtools", "survival", "glmnet", "pls", "lars")
 for (pkg in base_deps) {
   install_cran_package(pkg)
 }
@@ -89,6 +89,7 @@ options(repos = c(
 ))
 
 install.packages("RWekajars_3.9.3-2.tar.gz", repos = NULL, type = "source")
+devtools::install_github("pbastide/plsRcox")
 
 # 安装CRAN包
 cat("\nInstalling CRAN packages...\n")
