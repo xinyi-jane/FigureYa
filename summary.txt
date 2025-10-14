@@ -210,6 +210,29 @@ RMD Render Summary
 [SKIPPED] - ./FigureYa205immunophenoscore_update/FigureYa205immunophenoscore_update.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa301scCoExpr/FigureYa301scCoExpr.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa170ImmuLncRNA/FigureYa170ImmuLncRNA.Rmd (Not listed in auto_Knit_online.txt)
+[FAILED] - ./FigureYa293Plus_BinaryClassificationML/FigureYa293Plus_BinaryClassificationML.Rmd
+--- Error Log for ./FigureYa293Plus_BinaryClassificationML/FigureYa293Plus_BinaryClassificationML.Rmd ---
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (plsRcox)
+
+The downloaded source packages are in
+	'/tmp/Rtmpjo25c8/downloaded_packages'
+Error in `library()`:
+! there is no package called 'gbm'
+Backtrace:
+    ▆
+ 1. └─base::library(gbm)
+
+Quitting from FigureYa293Plus_BinaryClassificationML.Rmd:61-117 [unnamed-chunk-1]
+Execution halted
+-----------------------------------
 [SKIPPED] - ./FigureYa71ssGSEA_update/FigureYa71ssGSEA_update.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa76corrgram/FigureYa76corrgram.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa292HCCsubtype/FigureYa292HCCsubtype.Rmd (Not listed in auto_Knit_online.txt)
