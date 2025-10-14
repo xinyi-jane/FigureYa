@@ -21,7 +21,11 @@ downloaded 1.9 MB
 * DONE (plsRcox)
 
 The downloaded source packages are in
+<<<<<<< Updated upstream
 	'/tmp/RtmptlsDbb/downloaded_packages'
+=======
+	'/tmp/RtmppylLML/downloaded_packages'
+>>>>>>> Stashed changes
 Error in `library()`:
 ! there is no package called 'gbm'
 Backtrace:
