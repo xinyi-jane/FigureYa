@@ -223,7 +223,7 @@ RMD Render Summary
 * DONE (plsRcox)
 
 The downloaded source packages are in
-	'/tmp/Rtmpjo25c8/downloaded_packages'
+	'/tmp/RtmptlsDbb/downloaded_packages'
 Error in `library()`:
 ! there is no package called 'gbm'
 Backtrace:
