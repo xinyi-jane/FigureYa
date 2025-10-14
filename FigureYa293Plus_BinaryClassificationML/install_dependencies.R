@@ -88,6 +88,8 @@ options(repos = c(
   CRAN = "https://cloud.r-project.org/"
 ))
 
+install.packages("RWekajars_3.9.3-2.tar.gz", repos = NULL, type = "source")
+
 # 安装CRAN包
 cat("\nInstalling CRAN packages...\n")
 cran_packages <- c("BART", "RColorBrewer", "compareC", "dplyr", "ggbreak", 
