@@ -21,12 +21,9 @@ downloaded 1.9 MB
 * DONE (plsRcox)
 
 The downloaded source packages are in
-	'/tmp/RtmpTgp0Bv/downloaded_packages'
-Error in `library()`:
-! there is no package called 'mlr3extralearners'
-Backtrace:
-    ▆
- 1. └─base::library(mlr3extralearners)
+	'/tmp/Rtmp3GrTIZ/downloaded_packages'
+Error:
+! cannot change value of locked binding for 'params'
 
-Quitting from FigureYa293Plus_BinaryClassificationML.Rmd:61-117 [unnamed-chunk-1]
+Quitting from FigureYa293Plus_BinaryClassificationML.Rmd:658-735 [unnamed-chunk-8]
 Execution halted
