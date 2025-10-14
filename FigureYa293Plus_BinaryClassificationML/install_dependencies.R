@@ -40,6 +40,40 @@ install_bioc_package <- function(package_name) {
   }
 }
 
+# 安装GitHub包
+install_github_package <- function(repo, method = "remotes") {
+  package_name <- strsplit(repo, "/")[[1]][2]
+  if (!is_package_installed(package_name)) {
+    cat("Installing GitHub package:", repo, "\n")
+    tryCatch({
+      if (method == "remotes") {
+        if (!is_package_installed("remotes")) {
+          install.packages("remotes")
+        }
+        remotes::install_github(repo, dependencies = TRUE)
+      } else if (method == "devtools") {
+        if (!is_package_installed("devtools")) {
+          install.packages("devtools")
+        }
+        devtools::install_github(repo, dependencies = TRUE)
+      } else if (method == "pak") {
+        if (!is_package_installed("pak")) {
+          install.packages("pak")
+        }
+        pak::pak(repo)
+      }
+      cat("Successfully installed:", package_name, "\n")
+    }, error = function(e) {
+      cat("Failed to install", repo, ":", e$message, "\n")
+      return(FALSE)
+    })
+    return(TRUE)
+  } else {
+    cat("Package already installed:", package_name, "\n")
+    return(TRUE)
+  }
+}
+
 cat("Starting package installation...\n")
 
 # 先安装基础依赖
@@ -55,7 +89,7 @@ cran_packages <- c("BART", "RColorBrewer", "compareC", "dplyr", "ggbreak",
                    "ggplot2", "ggsci", "miscTools", "plsRcox", "randomForestSRC", 
                    "rlang", "superpc", "survivalsvm", "tibble", "tidyr",
                    "naivebayes", "party", "C50", "neuralnet", "Boruta", "FSelector",
-                   "mlr3", "mlr3learners", "mlr3extralearners", "caret", "plotly", "VIM", "gbm"
+                   "mlr3", "mlr3learners", "caret", "plotly", "VIM", "gbm"
 )
 
 for (pkg in cran_packages) {
@@ -101,16 +135,60 @@ if (!is_package_installed("CoxBoost")) {
   cat("CoxBoost already installed\n")
 }
 
+# 安装 mlr3extralearners (需要特殊处理)
+cat("\nInstalling mlr3extralearners...\n")
+if (!is_package_installed("mlr3extralearners")) {
+  cat("Attempting to install mlr3extralearners from GitHub...\n")
+  
+  # 方法1: 使用 remotes (首选)
+  success <- install_github_package("mlr-org/mlr3extralearners", method = "remotes")
+  
+  # 方法2: 如果 remotes 失败，尝试配置 R-universe
+  if (!success) {
+    cat("Remotes method failed, trying R-universe configuration...\n")
+    tryCatch({
+      # 临时设置 R-universe 镜像
+      temp_repos <- getOption("repos")
+      options(repos = c(
+        mlrorg = "https://mlr-org.r-universe.dev",
+        CRAN = "https://cloud.r-project.org/"
+      ))
+      install.packages("mlr3extralearners")
+      options(repos = temp_repos)  # 恢复原来的设置
+      cat("Successfully installed mlr3extralearners from R-universe\n")
+    }, error = function(e) {
+      cat("R-universe method failed:", e$message, "\n")
+      
+      # 方法3: 尝试使用 pak
+      cat("Trying pak package...\n")
+      install_github_package("mlr-org/mlr3extralearners", method = "pak")
+    })
+  }
+} else {
+  cat("mlr3extralearners already installed\n")
+}
+
 # 验证安装
 cat("\nVerifying installation...\n")
 required_packages <- c("CoxBoost", "survival", "glmnet", "randomForestSRC", "plsRcox",
-                       "BART", "superpc", "survivalsvm", "mlr3", "caret")  # 添加更多关键包
+                       "BART", "superpc", "survivalsvm", "mlr3", "caret", "mlr3extralearners")  # 添加 mlr3extralearners
 for (pkg in required_packages) {
   if (is_package_installed(pkg)) {
     cat("✓", pkg, "is installed\n")
   } else {
     cat("✗", pkg, "is NOT installed\n")
   }
+}
+
+# 测试 mlr3extralearners 是否能正常加载
+cat("\nTesting mlr3extralearners loading...\n")
+if (is_package_installed("mlr3extralearners")) {
+  tryCatch({
+    library(mlr3extralearners)
+    cat("✓ mlr3extralearners loaded successfully\n")
+  }, error = function(e) {
+    cat("✗ Failed to load mlr3extralearners:", e$message, "\n")
+  })
 }
 
 cat("\nInstallation completed!\n")
