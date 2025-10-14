@@ -101,23 +101,44 @@ if (!is_package_installed("CoxBoost")) {
   cat("CoxBoost already installed\n")
 }
 
-
-# 安装gbm3（新版gbm包） \ Install gbm3 (new gbm package) from GitHub
-cat("\nInstalling gbm3 from GitHub...\n")
-if (!is_package_installed("gbm3")) {
-  tryCatch({
-    remotes::install_github("gbm-developers/gbm3")
-    cat("Successfully installed gbm3 from GitHub\n")
-  }, error = function(e) {
-    cat("Failed to install gbm3 from GitHub:", e$message, "\n")
-  })
-} else {
-  cat("gbm3 already installed\n")
+# install gbm3
+install_gbm3 <- function() {
+  cat("\nInstalling gbm3 from GitHub...\n")
+  
+  # 检查是否已安装
+  if (is_package_installed("gbm3")) {
+    cat("gbm3 is already installed\n")
+    return(TRUE)
+  }
+  
+  installation_methods <- list(
+    function() remotes::install_github("gbm-developers/gbm3"),
+    function() remotes::install_github("gbm-developers/gbm3", auth_token = NULL),
+    function() devtools::install_github("gbm-developers/gbm3")
+  )
+  
+  for (i in seq_along(installation_methods)) {
+    tryCatch({
+      installation_methods[[i]]()
+      cat("Successfully installed gbm3 from GitHub (method ", i, ")\n", sep = "")
+      return(TRUE)
+    }, error = function(e) {
+      cat("Installation method ", i, " failed: ", e$message, "\n", sep = "")
+    })
+  }
+  
+  cat("All installation methods failed. Please install gbm3 manually.\n")
+  return(FALSE)
 }
+
+# 使用函数
+install_gbm3()
+
 
 # 验证安装
 cat("\nVerifying installation...\n")
-required_packages <- c("CoxBoost", "survival", "glmnet", "randomForestSRC", "plsRcox")
+required_packages <- c("CoxBoost", "survival", "glmnet", "randomForestSRC", "plsRcox",
+                       "BART", "superpc", "survivalsvm", "mlr3", "caret")  # 添加更多关键包
 for (pkg in required_packages) {
   if (is_package_installed(pkg)) {
     cat("✓", pkg, "is installed\n")
