@@ -223,16 +223,12 @@ RMD Render Summary
 * DONE (plsRcox)
 
 The downloaded source packages are in
-<<<<<<< Updated upstream
-	'/tmp/RtmptlsDbb/downloaded_packages'
-=======
-	'/tmp/RtmppylLML/downloaded_packages'
->>>>>>> Stashed changes
+	'/tmp/RtmpLOE7LB/downloaded_packages'
 Error in `library()`:
-! there is no package called 'gbm'
+! there is no package called 'mlr3extralearners'
 Backtrace:
     ▆
- 1. └─base::library(gbm)
+ 1. └─base::library(mlr3extralearners)
 
 Quitting from FigureYa293Plus_BinaryClassificationML.Rmd:61-117 [unnamed-chunk-1]
 Execution halted
