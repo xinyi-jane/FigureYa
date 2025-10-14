@@ -93,7 +93,7 @@ cat("\nInstalling CRAN packages...\n")
 cran_packages <- c("BART", "RColorBrewer", "compareC", "dplyr", "ggbreak", 
                    "ggplot2", "ggsci", "miscTools", "plsRcox", "randomForestSRC", 
                    "rlang", "superpc", "survivalsvm", "tibble", "tidyr",
-                   "naivebayes", "party", "C50", "neuralnet", "Boruta", "FSelector",
+                   "naivebayes", "party", "C50", "neuralnet", "Boruta", "RWekajars", "FSelector",
                    "mlr3", "mlr3learners", "mlr3extralearners", "caret", "plotly", "VIM", "gbm"
 )
 
