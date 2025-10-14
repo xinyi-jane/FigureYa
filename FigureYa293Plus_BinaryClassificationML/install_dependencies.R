@@ -55,7 +55,7 @@ cran_packages <- c("BART", "RColorBrewer", "compareC", "dplyr", "ggbreak",
                    "ggplot2", "ggsci", "miscTools", "plsRcox", "randomForestSRC", 
                    "rlang", "superpc", "survivalsvm", "tibble", "tidyr",
                    "naivebayes", "party", "C50", "neuralnet", "Boruta", "FSelector",
-                   "mlr3", "mlr3learners", "mlr3extralearners", "caret", "plotly", "VIM"
+                   "mlr3", "mlr3learners", "mlr3extralearners", "caret", "plotly", "VIM", "gbm"
 )
 
 for (pkg in cran_packages) {
@@ -113,6 +113,7 @@ install_gbm3 <- function() {
   
   installation_methods <- list(
     function() remotes::install_github("gbm-developers/gbm3"),
+    function() remotes::install_github("gbm-developers/gbm3", build_vignettes = TRUE, force = TRUE),
     function() remotes::install_github("gbm-developers/gbm3", auth_token = NULL),
     function() devtools::install_github("gbm-developers/gbm3")
   )
