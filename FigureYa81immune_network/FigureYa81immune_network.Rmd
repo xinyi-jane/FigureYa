@@ -53,7 +53,6 @@ Using a network diagram to simultaneously display relevant relationships pvalue�
 - Or the correlation and clustering results of multiple genes in the expression profile data pvalue、 The relationship with prognosis is richer than the correlation shown in Figure Ya37.
 
 ## 环境设置
-
 ## Environment settings
 
 ```{r}
@@ -83,14 +82,13 @@ mycol <- c("#FDBF6F", "#1F78B4", "#E31A1C", "#8C510A")
 ```
 
 ## 输入文件
+## Input file
 
 至少要提供easy_input_immune.csv文件，例如免疫细胞矩阵，或基因表达矩阵（把这里的免疫细胞替换成基因即可）。如果没有生存分析结果，可以用其他pvalue代替。
 
 easy_input_immune.csv，免疫细胞矩阵文件，用于计算相关系数和P值、把细胞分成4个cluster、通过卡相关性的P值来建立细胞间的连接关系。每行一个sample，每列一种细胞。最后一列fibioblast用mcpcounter获得，可参考FigureYa56immune_inflitration；文中其他22种免疫细胞用CIBERSORT计算获得，还可以用FigureYa56immune_inflitration或FigureYa71ssGSEA来量化免疫细胞。
 
 easy_input_HR.csv，生存分析结果，需要HR（节点圆心点的颜色，用AI来加）和p value（节点圆的大小）列。可通过FigureYa47HR2table计算获得。
-
-## Input file
 
 At least provide the easy_input_immune.csv file, such as the immune cell matrix or gene expression matrix (replace the immune cells here with genes). If there are no survival analysis results, other p-values can be used instead.
 
@@ -416,6 +414,8 @@ dev.off()  # 关闭图形设备 | Close graphics device
 文字的位置用Illustrator调整；再根据“output_HR_corlor.csv”的最后一列用Illustrator在圆心上画点，点的颜色代表HR的正负。
 
 Adjust the position of the text using Illustrator; Draw a point on the center of the circle using Illustrator based on the last column of 'outputting _ HR-color. csv', where the color of the point represents the positive or negative sign of HR.
+
+## Session Info
 
 ```{r}
 sessionInfo()
