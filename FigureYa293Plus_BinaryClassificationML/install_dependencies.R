@@ -89,7 +89,7 @@ options(repos = c(
 ))
 
 install.packages("RWekajars_3.9.3-2.tar.gz", repos = NULL, type = "source")
-devtools::install_github("pbastide/plsRcox")
+install.packages("plsRcox-master.tar.gz", repos = NULL, type = "source")
 
 # 安装CRAN包
 cat("\nInstalling CRAN packages...\n")
