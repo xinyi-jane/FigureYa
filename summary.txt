@@ -210,7 +210,29 @@ RMD Render Summary
 [SKIPPED] - ./FigureYa205immunophenoscore_update/FigureYa205immunophenoscore_update.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa301scCoExpr/FigureYa301scCoExpr.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa170ImmuLncRNA/FigureYa170ImmuLncRNA.Rmd (Not listed in auto_Knit_online.txt)
-[SKIPPED] - ./FigureYa293Plus_BinaryClassificationML/FigureYa293Plus_BinaryClassificationML.Rmd (Not listed in auto_Knit_online.txt)
+[FAILED] - ./FigureYa293Plus_BinaryClassificationML/FigureYa293Plus_BinaryClassificationML.Rmd
+--- Error Log for ./FigureYa293Plus_BinaryClassificationML/FigureYa293Plus_BinaryClassificationML.Rmd ---
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (plsRcox)
+Error:
+! protect(): protection stack overflow
+Backtrace:
+    ▆
+ 1. └─global importance_feature_selection(est_data, method = fs_method)
+ 2.   ├─randomForest::randomForest(...)
+ 3.   ├─randomForest:::randomForest.formula(...)
+ 4.   │ └─base::eval(m, parent.frame())
+ 5.   │   └─base::eval(m, parent.frame())
+ 6.   ├─stats::model.frame(...)
+ 7.   └─stats::model.frame.default(...)
+ 8.     ├─stats::terms(formula, data = data)
+ 9.     └─stats::terms.formula(formula, data = data)
+
+Quitting from FigureYa293Plus_BinaryClassificationML.Rmd:608-652 [unnamed-chunk-7]
+Execution halted
+-----------------------------------
 [SKIPPED] - ./FigureYa71ssGSEA_update/FigureYa71ssGSEA_update.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa76corrgram/FigureYa76corrgram.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa292HCCsubtype/FigureYa292HCCsubtype.Rmd (Not listed in auto_Knit_online.txt)
@@ -323,7 +345,7 @@ RMD Render Summary
 [SKIPPED] - ./FigureYa119Multiclasslimma/FigureYa119Multiclasslimma.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa65SVM/FigureYa65SVM.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa106immunotherapy/FigureYa106immunotherapy.Rmd (Not listed in auto_Knit_online.txt)
-[SUCCESS] - ./FigureYa81immune_network/FigureYa81immune_network.Rmd
+[SKIPPED] - ./FigureYa81immune_network/FigureYa81immune_network.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa150diversityScore/FigureYa150diversityScore.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa224scMarker/FigureYa224scMarker.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa82IGVzoom/FigureYa82IGVzoom.Rmd (Not listed in auto_Knit_online.txt)
