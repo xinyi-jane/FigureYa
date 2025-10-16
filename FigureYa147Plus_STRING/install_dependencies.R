@@ -50,18 +50,10 @@ cat("===========================================\n")
 
 # Installing CRAN packages
 cat("\nInstalling CRAN packages...\n")
-cran_packages <- c("ggplot2", "igraph", "magrittr", "reshape2")
+cran_packages <- c("ggplot2", "igraph", "magrittr", "reshape2", "tidyr")
 
 for (pkg in cran_packages) {
   install_cran_package(pkg)
-}
-
-# Installing Bioconductor packages
-cat("\nInstalling Bioconductor packages...\n")
-bioc_packages <- c("clusterProfiler", "org.Hs.eg.db")
-
-for (pkg in bioc_packages) {
-  install_bioc_package(pkg)
 }
 
 cat("\n===========================================\n")
