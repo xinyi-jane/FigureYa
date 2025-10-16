@@ -1176,10 +1176,10 @@
     "thumb": "gallery_compress/FigureYa147interaction.webp"
   },
   {
-    "id": "main_FigureYa147Plus_STRING_FigureYa147interaction",
-    "title": "FigureYa147Plus_STRING/FigureYa147interaction.html",
-    "html": "FigureYa147Plus_STRING/FigureYa147interaction.html",
-    "text": "texts/main_FigureYa147Plus_STRING_FigureYa147interaction.txt",
+    "id": "main_FigureYa147Plus_STRING_FigureYa147Plus_STRING",
+    "title": "FigureYa147Plus_STRING/FigureYa147Plus_STRING.html",
+    "html": "FigureYa147Plus_STRING/FigureYa147Plus_STRING.html",
+    "text": "texts/main_FigureYa147Plus_STRING_FigureYa147Plus_STRING.txt",
     "folder": "FigureYa147Plus_STRING",
     "thumb": null
   },
