@@ -3,7 +3,7 @@ FigureYa25Plus_Sankey_py
 ¶
 Author:
 Ying Ge
-In [160]:
+In [200]:
 from
 datetime
 import
@@ -34,7 +34,7 @@ current_date
 }
 "
 )
-Out[160]:
+Out[200]:
 Date
 : 2025-10-18
 Academic Citation
@@ -50,8 +50,7 @@ Requirement Description
 Draw interactive sankey with plotly.
 出自
 https://www.nature.com/articles/s41388-019-1026-9
-Fig. 4 Identification of CNV-driven rRNA metabolism-related genes with clinical relevance.
-f, g Pie charts showing the Chi-squared test of clinicopathologic factors for PRE in CRC (f) and LUAD (g) tumor samples from the TCGA.
+Figure 2: Driver genes and pathways altered in MB.c, Graphical summary of the most frequently mutated genes (≥10 affected cases) and their subgroup distribution
 应用场景
 ¶
 Application Scenarios
@@ -62,12 +61,12 @@ A dataset may have multiple attributes, and when there is an overlap between eac
 ¶
 Environment Configuration
 ¶
-In [190]:
+In [201]:
 #python --version
 #pip install jupyter ipykernel pandas numpy matplotlib seaborn
 #pip install scipy statsmodels plotly
 #pip install notebook nbconvert
-In [191]:
+In [202]:
 import
 pandas
 as
@@ -92,7 +91,7 @@ Or just write two columns, with the first column being the miRNA and the second 
 ¶
 Start plotting
 ¶
-In [163]:
+In [203]:
 # 设置 Plotly 在 Jupyter notebook 中显示 | Set up Plotly to display in Jupyter notebook
 pyo
 .
@@ -779,7 +778,7 @@ print_data_summary
 (
 df
 )
-In [164]:
+In [204]:
 # 创建图形并在 notebook 中显示 | Create figures and display in notebook
 print
 (
@@ -800,7 +799,7 @@ fig1
 .
 show
 ()
-In [165]:
+In [205]:
 print
 (
 "创建基因到亚型的直接流向图... | Creating direct flow diagram from gene to subtype..."
@@ -824,7 +823,7 @@ fig2
 .
 show
 ()
-In [166]:
+In [206]:
 # 可选：如果你还想保存 HTML 文件 | Optional: if you want to save HTML files
 print
 (
@@ -879,7 +878,7 @@ print
 )
 Session Info
 ¶
-In [167]:
+In [207]:
 import
 IPython
 print
