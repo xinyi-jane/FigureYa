@@ -54,7 +54,7 @@ RMD Render Summary
 [SKIPPED] - ./FigureYa159LR_RF_V2/FigureYa159LR_RF_V2.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa179AMDAplot/FigureYa179AMDAplot.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa198SignatureCombinationV2/FigureYa198SignatureCombinationV2.Rmd (Not listed in auto_Knit_online.txt)
-[SUCCESS] - ./FigureYa12box/FigureYa12box.Rmd
+[SKIPPED] - ./FigureYa12box/FigureYa12box.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa238corRiskMut/FigureYa238corRiskMut.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa265panCNV/FigureYa265panCNV.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa251NPHSurv/FigureYa251NPHSurv.Rmd (Not listed in auto_Knit_online.txt)
