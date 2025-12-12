@@ -1975,27 +1975,27 @@ installing to /home/runner/work/_temp/Library/00LOCK-ragg/00new/ragg/libs
 ** using staged installation
 Found OpenSSL3
 Using static libgit2 for Linux x86_64
-Using PKG_CFLAGS=-I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2
-Using PKG_LIBS=-L/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/lib -lstatgit2 -lrt -lpthread -lstatssh2 -lstatssl -lstatcrypto -ldl
+Using PKG_CFLAGS=-I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2
+Using PKG_LIBS=-L/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/lib -lstatgit2 -lrt -lpthread -lstatssh2 -lstatssl -lstatcrypto -ldl
 Configuration OK!
 ** libs
 using C compiler: ‘gcc (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0’
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c branch.c -o branch.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c clone.c -o clone.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c commit.c -o commit.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c config.c -o config.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c conflicts.c -o conflicts.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c files.c -o files.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c ignore.c -o ignore.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c init.c -o init.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c merge.c -o merge.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c rebase.c -o rebase.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c stash.c -o stash.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c submodules.c -o submodules.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c tag.c -o tag.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c utils.c -o utils.o
-gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c version.c -o version.o
-gcc -std=gnu2x -shared -L/opt/R/4.5.2/lib/R/lib -L/usr/local/lib -o gert.so branch.o clone.o commit.o config.o conflicts.o files.o ignore.o init.o merge.o rebase.o stash.o submodules.o tag.o utils.o version.o -L/tmp/RtmpLHPj6R/R.INSTALL684c5a0bf970/gert/.deps/lib -lstatgit2 -lrt -lpthread -lstatssh2 -lstatssl -lstatcrypto -ldl -L/opt/R/4.5.2/lib/R/lib -lR
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c branch.c -o branch.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c clone.c -o clone.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c commit.c -o commit.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c config.c -o config.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c conflicts.c -o conflicts.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c files.c -o files.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c ignore.c -o ignore.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c init.c -o init.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c merge.c -o merge.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c rebase.c -o rebase.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c stash.c -o stash.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c submodules.c -o submodules.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c tag.c -o tag.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c utils.c -o utils.o
+gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG -I/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/include -DSTATIC_LIBGIT2 -DR_NO_REMAP -DSTRICT_R_HEADERS  -I/usr/local/include   -fvisibility=hidden -fpic  -g -O2  -c version.c -o version.o
+gcc -std=gnu2x -shared -L/opt/R/4.5.2/lib/R/lib -L/usr/local/lib -o gert.so branch.o clone.o commit.o config.o conflicts.o files.o ignore.o init.o merge.o rebase.o stash.o submodules.o tag.o utils.o version.o -L/tmp/RtmprAr14h/R.INSTALL68401c361d74/gert/.deps/lib -lstatgit2 -lrt -lpthread -lstatssh2 -lstatssl -lstatcrypto -ldl -L/opt/R/4.5.2/lib/R/lib -lR
 installing to /home/runner/work/_temp/Library/00LOCK-gert/00new/gert/libs
 ** R
 ** inst
@@ -2315,7 +2315,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-testthat/00new/testthat/lib
 * DONE (devtools)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: devtools 
 Package already installed: survival 
 Installing CRAN package: glmnet 
@@ -15174,7 +15174,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-glmnet/00new/glmnet/libs
 * DONE (glmnet)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: glmnet 
 
 Installing CRAN packages...
@@ -15240,7 +15240,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-BART/00new/BART/libs
 * DONE (BART)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: BART 
 Installing CRAN package: RColorBrewer 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -15266,7 +15266,7 @@ downloaded 11 KB
 * DONE (RColorBrewer)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: RColorBrewer 
 Installing CRAN package: compareC 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -15299,7 +15299,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-compareC/00new/compareC/lib
 * DONE (compareC)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: compareC 
 Installing CRAN package: dplyr 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -16963,7 +16963,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-tidyr/00new/tidyr/libs
 * DONE (dbplyr)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: dplyr 
 Installing CRAN package: gbm 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -17117,7 +17117,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-gbm/00new/gbm/libs
 * DONE (viridis)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: gbm 
 Installing CRAN package: ggbreak 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -17435,7 +17435,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-ggiraph/00new/ggiraph/libs
 * DONE (ggimage)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: ggbreak 
 Package already installed: ggplot2 
 Installing CRAN package: ggsci 
@@ -17464,7 +17464,7 @@ downloaded 2.0 MB
 * DONE (ggsci)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: ggsci 
 Installing CRAN package: miscTools 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -17502,7 +17502,7 @@ trying URL 'https://cloud.r-project.org/src/contrib/miscTools_0.6-28.tar.gz'
 * DONE (miscTools)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: miscTools 
 Installing CRAN package: plsRcox 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -17883,32 +17883,32 @@ configure: creating ./config.status
 config.status: creating src/Makefile
 ** libs
 make -f "/opt/R/4.5.2/lib/R/etc/Makeconf" -f Makefile init.o mapclip.o mapget.o smooth.o thin.o 
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c init.c -o init.o
 gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c mapclip.c -o mapclip.o
 gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c mapget.c -o mapget.o
 gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c smooth.c -o smooth.o
 gcc -std=gnu2x -I"/opt/R/4.5.2/lib/R/include" -DNDEBUG   -I/usr/local/include    -fpic  -g -O2  -c thin.c -o thin.o
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 "/opt/R/4.5.2/lib/R/bin/R" CMD SHLIB -o maps.so init.o mapclip.o mapget.o smooth.o thin.o 
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 gcc -std=gnu2x -shared -L/opt/R/4.5.2/lib/R/lib -L/usr/local/lib -o maps.so init.o mapclip.o mapget.o smooth.o thin.o -L/opt/R/4.5.2/lib/R/lib -lR
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 make -f "/opt/R/4.5.2/lib/R/etc/Makeconf" -f Makefile Gmake
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 gcc -std=gnu2x -g -O2  -I/usr/local/include -L/usr/local/lib  Gmake.c   -o Gmake
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 make -f "/opt/R/4.5.2/lib/R/etc/Makeconf" -f Makefile Lmake
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 gcc -std=gnu2x -g -O2  -I/usr/local/include -L/usr/local/lib  Lmake.c   -o Lmake
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 make -f "/opt/R/4.5.2/lib/R/etc/Makeconf" -f Makefile world2.line
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 Converting world to world2
 gawk -f ./convert.awk < world.line > world2.line
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 make -f "/opt/R/4.5.2/lib/R/etc/Makeconf" -f Makefile county.L state.L usa.L nz.L world.L world2.L italy.L france.L state.vbm.L state.carto.L lakes.L
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 ./Lmake 0 s b county.line county.linestats ../inst/mapdata/county.L
 ./Lmake 0 s b state.line state.linestats ../inst/mapdata/state.L
 ./Lmake 0 s b usa.line usa.linestats ../inst/mapdata/usa.L
@@ -17920,9 +17920,9 @@ make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
 ./Lmake 0 p b state.vbm.line state.vbm.linestats ../inst/mapdata/state.vbm.L
 ./Lmake 0 p b state.carto.line state.carto.linestats ../inst/mapdata/state.carto.L
 ./Lmake 0 s b lakes.line lakes.linestats ../inst/mapdata/lakes.L
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 make -f "/opt/R/4.5.2/lib/R/etc/Makeconf" -f Makefile county.G state.G usa.G nz.G world.G world2.G italy.G france.G state.vbm.G state.carto.G lakes.G
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 ./Gmake b county.gon county.gonstats ../inst/mapdata/county.G ../inst/mapdata/county.L
 ./Gmake b state.gon state.gonstats ../inst/mapdata/state.G ../inst/mapdata/state.L
 ./Gmake b usa.gon usa.gonstats ../inst/mapdata/usa.G ../inst/mapdata/usa.L
@@ -17934,10 +17934,10 @@ make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
 ./Gmake b state.vbm.gon state.vbm.gonstats ../inst/mapdata/state.vbm.G ../inst/mapdata/state.vbm.L
 ./Gmake b state.carto.gon state.carto.gonstats ../inst/mapdata/state.carto.G ../inst/mapdata/state.carto.L
 ./Gmake b lakes.gon lakes.gonstats ../inst/mapdata/lakes.G ../inst/mapdata/lakes.L
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 make -f "/opt/R/4.5.2/lib/R/etc/Makeconf" -f Makefile county.N state.N usa.N nz.N world.N world2.N italy.N france.N state.vbm.N state.carto.N lakes.N
-make[1]: Entering directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
-make[1]: Leaving directory '/tmp/Rtmp7FIkAX/R.INSTALL97a731947ccc/maps/src'
+make[1]: Entering directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
+make[1]: Leaving directory '/tmp/RtmpjPa5l9/R.INSTALL97a035aeabfc/maps/src'
 installing to /home/runner/work/_temp/Library/00LOCK-maps/00new/maps/libs
 ** R
 ** data
@@ -18093,9 +18093,9 @@ set LDFLAGS=-L/usr/local/lib
 -- Looking for __cplusplus - found
 -- Found JNI: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.29-7/x64/include  found components: JVM
 -- Found Java: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/11.0.29-7/x64/bin/java (found suitable version "11.0.29", minimum required is "1.5")
--- Configuring done (2.5s)
+-- Configuring done (6.3s)
 -- Generating done (0.0s)
--- Build files have been written to: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt-build
+-- Build files have been written to: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt-build
 [  2%] Generating nlopt.hpp
 [  2%] Built target generate-cpp
 [  4%] Building C object CMakeFiles/nlopt.dir/src/algs/direct/DIRect.c.o
@@ -18150,17 +18150,17 @@ set LDFLAGS=-L/usr/local/lib
 [100%] Built target nlopt
 Install the project...
 -- Install configuration: "Release"
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/lib/pkgconfig/nlopt.pc
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/include/nlopt.h
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/include/nlopt.hpp
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/lib/libnlopt.a
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/share/man/man3/nlopt.3
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/share/man/man3/nlopt_minimize.3
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/share/man/man3/nlopt_minimize_constrained.3
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/lib/cmake/nlopt/NLoptLibraryDepends.cmake
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/lib/cmake/nlopt/NLoptLibraryDepends-release.cmake
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/lib/cmake/nlopt/NLoptConfig.cmake
--- Installing: /tmp/RtmpSlxLmu/R.INSTALL9afe4dbd266d/nloptr/src/nlopt/lib/cmake/nlopt/NLoptConfigVersion.cmake
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/lib/pkgconfig/nlopt.pc
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/include/nlopt.h
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/include/nlopt.hpp
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/lib/libnlopt.a
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/share/man/man3/nlopt.3
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/share/man/man3/nlopt_minimize.3
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/share/man/man3/nlopt_minimize_constrained.3
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/lib/cmake/nlopt/NLoptLibraryDepends.cmake
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/lib/cmake/nlopt/NLoptLibraryDepends-release.cmake
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/lib/cmake/nlopt/NLoptConfig.cmake
+-- Installing: /tmp/RtmpSaYPZE/R.INSTALL9af8aeb6b85/nloptr/src/nlopt/lib/cmake/nlopt/NLoptConfigVersion.cmake
 Moving nlopt/lib to nlopt/lib
 mv: cannot move 'nlopt/lib' to a subdirectory of itself, 'nlopt/lib/lib'
 Copying headers found in src/nlopt/include into inst/include
@@ -20070,7 +20070,7 @@ install.packages(c('mixOmics', 'survcomp'))
 * removing ‘/home/runner/work/_temp/Library/plsRcox’
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: plsRcox 
 Installing CRAN package: randomForestSRC 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -33263,7 +33263,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-caret/00new/caret/libs
 * DONE (caret)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: randomForestSRC 
 Package already installed: rlang 
 Installing CRAN package: superpc 
@@ -33290,7 +33290,7 @@ downloaded 162 KB
 * DONE (superpc)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: superpc 
 Installing CRAN package: survivalsvm 
 Installing package into ‘/home/runner/work/_temp/Library’
@@ -33330,7 +33330,7 @@ trying URL 'https://cloud.r-project.org/src/contrib/survivalsvm_0.0.6.tar.gz'
 * DONE (survivalsvm)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: survivalsvm 
 Package already installed: tibble 
 Package already installed: tidyr 
@@ -33745,7 +33745,7 @@ Creating a generic function for ‘smoothEnds’ from package ‘stats’ in pac
 * DONE (ComplexHeatmap)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: ComplexHeatmap 
 Package already installed: circlize 
 Installing Bioconductor package: mixOmics 
@@ -52619,7 +52619,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-BiocParallel/00new/BiocPara
 * DONE (mixOmics)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: mixOmics 
 Installing Bioconductor package: survcomp 
 'getOption("repos")' replaces Bioconductor standard repositories, see
@@ -52720,7 +52720,7 @@ installing to /home/runner/work/_temp/Library/00LOCK-survcomp/00new/survcomp/lib
 * DONE (survcomp)
 
 The downloaded source packages are in
-	‘/tmp/RtmpRBDM2c/downloaded_packages’
+	‘/tmp/Rtmp1IXgKp/downloaded_packages’
 Successfully installed: survcomp 
 
 Installing CoxBoost...
