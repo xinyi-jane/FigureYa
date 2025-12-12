@@ -170,6 +170,31 @@ pre_var <- colnames(est_data)[-c(1:3)]
 est_dd <- est_data[, c('OS.time', 'OS', pre_var)]
 val_dd_list <- lapply(val_data_list, function(x){x[, c('OS.time', 'OS', pre_var)]})
 
+# Helper function to make predictions robust to missing predictor rows
+# 辅助函数使预测对缺失预测值行具有鲁棒性
+safe_predict_vector <- function(fit, newdata, predict_args = list()) {
+  # newdata expected to include survival cols in columns 1:2
+  n <- nrow(newdata)
+  RS <- rep(NA_real_, n)
+  # identify rows with complete predictor values (exclude first two columns)
+  if (ncol(newdata) > 2) {
+    idx <- which(complete.cases(newdata[, -c(1,2)]))
+  } else {
+    idx <- seq_len(n)
+  }
+  if (length(idx) > 0) {
+    args <- c(list(object = fit, newdata = newdata[idx, , drop = FALSE]), predict_args)
+    pr <- tryCatch(do.call(predict, args), error = function(e) e)
+    if (inherits(pr, "error")) {
+      warning("Prediction failed: ", conditionMessage(pr))
+    } else {
+      if (is.list(pr) && !is.null(pr$predicted)) pr_vec <- pr$predicted else pr_vec <- as.numeric(pr)
+      RS[idx] <- pr_vec
+    }
+  }
+  return(cbind(newdata[, 1:2, drop = FALSE], RS = RS))
+}
+
 # 设置种子数和节点数，其中节点数可以调整
 # Set the seed number and node size (node size can be adjusted)
 rf_nodesize <- 5
@@ -192,7 +217,7 @@ fit <- rfsrc(Surv(OS.time,OS)~., data = est_dd,
              proximity = T, 
              forest = T, 
              seed = seed)
-rs <- lapply(val_dd_list, function(x){cbind(x[, 1:2], RS  = predict(fit, newdata = x)$predicted)})
+rs <- lapply(val_dd_list, function(x) safe_predict_vector(fit, x, predict_args = list()))
 cc <- data.frame(Cindex = sapply(rs, function(x){as.numeric(summary(coxph(Surv(OS.time, OS) ~ RS, x))$concordance[1])})) %>%
   rownames_to_column('ID')
 cc$Model <- 'RSF'
