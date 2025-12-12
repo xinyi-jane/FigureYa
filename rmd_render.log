@@ -1,1 +1,36 @@
-[WARNING] Deprecated: --highlight-style. Use --syntax-highlighting instead.
+trying URL 'https://cloud.r-project.org/src/contrib/plsRcox_1.8.0.tar.gz'
+Content type 'application/x-gzip' length 1985588 bytes (1.9 MB)
+==================================================
+downloaded 1.9 MB
+
+* installing *source* package ‘plsRcox’ ...
+** this is package ‘plsRcox’ version ‘1.8.0’
+** package ‘plsRcox’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (plsRcox)
+
+The downloaded source packages are in
+	'/tmp/RtmpEQBmVF/downloaded_packages'
+Error in `data.frame()`:
+! arguments imply differing number of rows: 269, 268
+Backtrace:
+    ▆
+ 1. └─base::lapply(...)
+ 2.   └─global FUN(X[[i]], ...)
+ 3.     └─base::cbind(x[, 1:2], RS = predict(fit, newdata = x)$predicted)
+ 4.       └─base::cbind(deparse.level, ...)
+ 5.         └─base::data.frame(..., check.names = FALSE)
+
+Quitting from FigureYa293machineLearning.Rmd:185-505 [unnamed-chunk-3]
+Execution halted

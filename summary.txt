@@ -280,7 +280,29 @@ RMD Render Summary
 [SKIPPED] - ./FigureYa261circGene/FigureYa261circGene.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa239ST_PDAC/FigureYa239ST_PDAC.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa244PCAPlot/FigureYa244PCAPlot.Rmd (Not listed in auto_Knit_online.txt)
-[SKIPPED] - ./FigureYa293machineLearning/FigureYa293machineLearning.Rmd (Not listed in auto_Knit_online.txt)
+[FAILED] - ./FigureYa293machineLearning/FigureYa293machineLearning.Rmd
+--- Error Log for ./FigureYa293machineLearning/FigureYa293machineLearning.Rmd ---
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (plsRcox)
+
+The downloaded source packages are in
+	'/tmp/RtmpEQBmVF/downloaded_packages'
+Error in `data.frame()`:
+! arguments imply differing number of rows: 269, 268
+Backtrace:
+    ▆
+ 1. └─base::lapply(...)
+ 2.   └─global FUN(X[[i]], ...)
+ 3.     └─base::cbind(x[, 1:2], RS = predict(fit, newdata = x)$predicted)
+ 4.       └─base::cbind(deparse.level, ...)
+ 5.         └─base::data.frame(..., check.names = FALSE)
+
+Quitting from FigureYa293machineLearning.Rmd:185-505 [unnamed-chunk-3]
+Execution halted
+-----------------------------------
 [SKIPPED] - ./FigureYa193RiskTable/FigureYa193RiskTable.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa305PMAPscore/FigureYa305PMAPscore.Rmd (Not listed in auto_Knit_online.txt)
 [SKIPPED] - ./FigureYa20mortality/FigureYa20mortalityV2.Rmd (Not listed in auto_Knit_online.txt)
